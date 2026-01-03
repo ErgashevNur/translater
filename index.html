@@ -11,6 +11,24 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <title>Glossary</title>
   </head>
   <body>
@@ -46,7 +64,11 @@
 
       <!-- Header Section -->
       <div class="header_section">
-        <input type="search" class="search" />
+        <input
+          type="search"
+          class="search"
+          style="font-weight: 700; font-size: 20px"
+        />
       </div>
 
       <div
@@ -59,13 +81,19 @@
         "
       >
         <div class="">
-          <h3 style="font-size: 64px; color: #2d2d2d; font-weight: 700">
+          <h3
+            id="word"
+            style="font-size: 64px; color: #2d2d2d; font-weight: 700"
+          >
             keyboard
           </h3>
-          <p style="color: #a445ed; font-size: 24px">/ˈkiːbɔːd/</p>
+          <p id="phonetic" style="color: #a445ed; font-size: 24px">
+            /ˈkiːbɔːd/
+          </p>
         </div>
+
         <div class="">
-          <div class="play-button"></div>
+          <button id="play-button" class="play-button"></button>
         </div>
       </div>
 
@@ -190,5 +218,7 @@
         <p>Source https://en.wiktionary.org/wiki/keyboard</p>
       </div> -->
     </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>
