@@ -10,6 +10,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./style.css" />
     <link
       rel="apple-touch-icon"
@@ -39,10 +52,10 @@
 
         <div class="navigation_main_box">
           <div class="custom-select">
-            <select id="font-select">
-              <option>Sans Serif</option>
-              <option>Serif</option>
-              <option>Monospace</option>
+            <select id="font-select" class="select">
+              <option value="sans-serif">Sans Serif</option>
+              <option value="serif">Serif</option>
+              <option value="monospace">Mono</option>
             </select>
             <i class="fa-solid fa-angle-down"></i>
           </div>
@@ -57,7 +70,9 @@
               </span>
             </label>
 
-            <i class="theme fa-solid fa-moon" style="font-size: 24px"></i>
+            <span id="mode-icon">
+              <i class="theme fa-solid fa-moon" style="font-size: 24px"></i>
+            </span>
           </div>
         </div>
       </div>
@@ -67,145 +82,162 @@
         <input
           type="search"
           class="search"
-          style="font-weight: 700; font-size: 20px"
+          style="font-weight: 700; font-size: 20px; margin-bottom: 10px"
         />
+        <label class="firstPage" style="color: #ff5252" for=""
+          >Whoops, can’t be empty…</label
+        >
       </div>
 
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          width: 100%;
-          margin-top: 45px;
-          justify-content: space-between;
-        "
-      >
-        <div class="">
-          <h3
-            id="word"
-            style="font-size: 64px; color: #2d2d2d; font-weight: 700"
-          >
-            keyboard
-          </h3>
-          <p id="phonetic" style="color: #a445ed; font-size: 24px">
-            /ˈkiːbɔːd/
+      <div id="not-found">
+        <div class="no-found">
+          <img
+            src="https://em-content.zobj.net/source/apple/391/slightly-frowning-face_1f641.png"
+          />
+          <h2>No Definitions Found</h2>
+          <p>
+            Sorry pal, we couldn't find definitions for the word you were
+            looking for. You can try the search again at later time or head to
+            the web instead.
           </p>
         </div>
-
-        <div class="">
-          <button id="play-button" class="play-button"></button>
-        </div>
       </div>
 
-      <!-- Main Section  -->
-      <div>
+      <div id="data">
         <div
           style="
-            width: 100%;
-            margin-top: 40px;
             display: flex;
             align-items: center;
-            gap: 20px;
-          "
-        >
-          <p>noun</p>
-          <hr
-            style="
-              width: 100%;
-              height: 1px;
-              border: none;
-              background-color: #e9e9e9;
-            "
-          />
-        </div>
-
-        <div style="margin-top: 40px">
-          <p>Meaning</p>
-
-          <ul>
-            <li>
-              <p>
-                (etc.) A set of keys used to operate a typewriter, computer etc.
-              </p>
-            </li>
-            <li>
-              <p>
-                A component of many instruments including the piano, organ, and
-                harpsichord consisting of usually black and white keys that
-                cause different tones to be produced when struck.
-              </p>
-            </li>
-            <li>
-              <p>
-                A device with keys of a musical keyboard, used to control
-                electronic sound-producing devices which may be built into or
-                separate from the keyboard device.
-              </p>
-            </li>
-          </ul>
-
-          <div
-            style="
-              display: flex;
-              align-items: center;
-              gap: 22px;
-              margin-top: 40px;
-            "
-          >
-            <p style="color: #757575">Synonyms</p>
-            <p style="color: #a445ed">electronic keyboard</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Second Section -->
-      <div
-        style="
-          width: 100%;
-          margin-top: 40px;
-          display: flex;
-          flex-direction: column;
-        "
-      >
-        <div
-          style="
             width: 100%;
-            margin-top: 40px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            margin-top: 45px;
+            justify-content: space-between;
           "
         >
-          <p style="font-weight: bold">verb</p>
-          <hr
-            style="
-              width: 100%;
-              height: 1px;
-              border: none;
-              background-color: #e9e9e9;
-            "
-          />
-        </div>
-
-        <div style="margin-top: 40px">
-          <p>Meaning</p>
-
-          <ul style="margin-top: 25px; display: flex; gap: 10px">
-            <li>
-              <p>To type on a computer keyboard.</p>
-            </li>
-          </ul>
-
-          <div style="display: flex; align-items: center; gap: 22px">
-            <p style="color: #757575">
-              “Keyboarding is the part of this job I hate the most.”
+          <div class="">
+            <h3 id="word" class="word">keyboard</h3>
+            <p id="phonetic" style="color: #a445ed; font-size: 24px">
+              /ˈkiːbɔːd/
             </p>
           </div>
-        </div>
-      </div>
 
-      <!-- Footer Section -->
-      <!-- <div>
+          <div class="">
+            <button id="play-button" class="play-button"></button>
+          </div>
+        </div>
+
+        <!-- Main Section  -->
+        <div>
+          <div
+            style="
+              width: 100%;
+              margin-top: 40px;
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            "
+          >
+            <p class="noun">noun</p>
+            <hr
+              style="
+                width: 100%;
+                height: 1px;
+                border: none;
+                background-color: #e9e9e9;
+              "
+            />
+          </div>
+
+          <div style="margin-top: 40px">
+            <p style="font-weight: 400; font-size: 20px; color: #757575">
+              Meaning
+            </p>
+
+            <ul id="ul">
+              <li>
+                <p>
+                  (etc.) A set of keys used to operate a typewriter, computer
+                  etc.
+                </p>
+              </li>
+              <li>
+                <p>
+                  A component of many instruments including the piano, organ,
+                  and harpsichord consisting of usually black and white keys
+                  that cause different tones to be produced when struck.
+                </p>
+              </li>
+              <li>
+                <p>
+                  A device with keys of a musical keyboard, used to control
+                  electronic sound-producing devices which may be built into or
+                  separate from the keyboard device.
+                </p>
+              </li>
+            </ul>
+
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 22px;
+                margin-top: 40px;
+              "
+            >
+              <p style="color: #757575">Synonyms</p>
+              <p id="synonym" style="color: #a445ed">electronic keyboard</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Section -->
+        <div
+          style="
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+          "
+        >
+          <div
+            style="width: 100%; display: flex; align-items: center; gap: 20px"
+          >
+            <p style="font-weight: 700; font-size: 24px">verb</p>
+            <hr
+              style="
+                width: 100%;
+                height: 1px;
+                border: none;
+                background-color: #e9e9e9;
+              "
+            />
+          </div>
+
+          <div style="margin-top: 40px">
+            <p style="font-weight: 400; font-size: 20px; color: #757575">
+              Meaning
+            </p>
+
+            <ul
+              id="ulVerb"
+              style="
+                margin-top: 25px;
+                margin-left: 47px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            ></ul>
+
+            <div style="display: flex; align-items: center; gap: 22px">
+              <p id="verbExample" style="color: #757575; margin-left: 47px">
+                “Keyboarding is the part of this job I hate the most.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Section -->
+        <!-- <div>
         <hr
           style="
             width: 100%;
@@ -217,6 +249,7 @@
 
         <p>Source https://en.wiktionary.org/wiki/keyboard</p>
       </div> -->
+      </div>
     </div>
 
     <script src="./app.js"></script>
